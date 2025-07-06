@@ -79,7 +79,7 @@ inline vec3 operator*(double t, const vec3 &v)
     return vec3(t * v[0], t * v[1], t * v[2]);
 }
 
-inline vec3 operator*( const vec3 &v, double t)
+inline vec3 operator*(const vec3 &v, double t)
 {
     return t * v;
 }
@@ -105,6 +105,16 @@ inline vec3 cross(const vec3 &u, const vec3 &v)
 inline vec3 unit_vector(const vec3 &v)
 {
     return v / v.length();
+}
+
+static vec3 random()
+{
+    return vec3(random_double(), random_double(), random_double());
+}
+
+static vec3 random(double min, double max)
+{
+    return vec3(random_double(min, max), random_double(min, max), random_double(min, max));
 }
 
 #endif
